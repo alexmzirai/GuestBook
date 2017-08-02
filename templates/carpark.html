@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/jquery-3.2.1.min.js"></script>
+    <style type = "text/css">
+     body {
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    background-color:lightblue;
+
+    }
+
+    </style>
+
+    <title> Car Park </title>
+</head>
+<header>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="/check_in">Check In</a></li>
+  <li role="presentation"><a href="#">#</a></li>   <--!WILL ADD FUNCTIONALITY TO THESE BUTTONS-->
+  <li role="presentation"><a href="#">##</a></li>
+</ul>
+</header>
+<hr>
+<h2 align="center"> Car park details and session management </h2>
+<hr>
+
+<body>
+
+<form name="carpark" method="POST" action="/carpark">
+<div class="form-group">
+    <label for="ownername">Name of Owner:</label>
+    <input type="text" class="form-control"  name="ownername">
+  </div>
+  <div class="form-group">
+    <label for="idnumber">ID Number:</label>
+    <input type="text" class="form-control" id="idnumber" name="idnumber">
+  </div>
+  <div class="form-group">
+    <label for="regnum">Vehicle Registration Number:</label>
+    <input type="text" class="form-control"  name="regnum">
+  </div>
+  <button type="submit" class="btn btn-default">Register Vehicle</button>
+</form>
+</div>
+{{ msg }}  <!--This is a message reply to be rendered back to the form after saving-->
+
+</body>
+</html>

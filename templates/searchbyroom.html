@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> GUESTBOOK - SEARCH BY ROOM </title>
+    <style type="text/css">
+
+        }
+        tr{
+            align-items: center;
+        }
+        td{
+            align-items: center;
+            align-self: center;
+        }
+        table{
+            align-self: center;
+            align-items: center;
+            align-content: center;
+        }
+    </style>
+
+</head>
+<body>
+<h1>GUEST BOOK APPLICATION</h1>
+<h3>Book Now!!! Limited Spaces Available</h3>
+<hr>
+        <div>
+        <a href="/">HOME</a>
+        <a href="/check_in">CHECK IN</a>
+        <a href="/checkout">CHECK OUT</a>
+        <a href="">ADMIN AREA</a>
+        <a href="">SEARCH</a>
+        <a href="/delete">REMOVE</a>
+        <a href="">UPDATE</a>
+        </div>
+
+<img src="../static/Hotel-Hilton-Pattaya-Landscaping-2.jpg" alt="" width="1250" height="300">
+<br><br>
+{{ msg }}  <!-- reply message rendered back after submitting the data-->
+
+<br>
+
+     <form action="/searchbyroom" method="POST">
+<center>
+<table>
+    <td><input type="number" name="room"
+           placeholder="Enter The Room No: "> </td>
+    <i>{{ msg2 }}</i>
+    </tr>
+    <tr>
+    <td><input type="submit" value="SEARCH CLIENT">
+    <input type="reset"> </td>
+    </tr>
+
+</table>
+</center>
+</form>
+<i>{{ error }}</i>
+<h2>Results:</h2>
+<center>
+    <table border="1" width="80%">
+        {% for item in  results %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>{{ item[4] }}</td>
+                <td>{{ item[5] }}</td>
+                <td><a href="/checkout/{{ item[4] }}">CHECK OUT</a> </td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+</center>
+</body>
+</html>

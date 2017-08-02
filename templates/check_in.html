@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/jquery-3.2.1.min.js"></script>
+    <style type = "text/css">
+
+    body {
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    background-color:lightblue;
+    }
+    </style>
+
+    <title> CHECK IN </title>
+</head>
+<body>
+<h1 align="center">GUEST BOOK APPLICATION</h1>
+<h3 align="center"> Book Now! Limited Spaces Available !!</h3>
+<hr>
+
+<div align="center">
+  <a href="/"> HOME </a>
+  <a href="/check_in"> CHECK IN </a>
+  <a href=""> CHECK OUT </a>
+  <a href=""> ADMIN AREA </a>
+  <a href=""> REMOVE </a>
+  <a href=""> UPDATE </a>
+  <a href="/carpark"> CAR PARK </a>
+  <a href="/logout"> LOG OUT </a>
+
+</div>
+
+<hr>
+
+<h1 align="center">{{ msg2 }}</h1>
+{% for item in results %}
+    <br><i>User: {{ item[0] }}</i><br/>
+    <i>Role: {{ item[2] }}</i>
+{% endfor %}
+<hr>
+
+<img src="../static/Hotel-Hilton-Pattaya-Landscaping-2.jpg" alt = "" width = "500" height = "250" align="center">
+
+{{ msg }}  <!--This is a message reply to be rendered back to the form after saving-->
+{{ msg2 }}
+
+<div align="center">
+  <form action = "/check_in" method = "POST">
+  <div>
+  <table>
+  <tr>
+   <td> Surname: </td> <td> <input type = 'text' placeholder = 'enter your surname' name = "fname"> </input> </td>
+  </tr>
+  <tr>
+   <td> Other Names: </td> <td> <input type = 'text' placeholder = 'enter your other names' name = "lname"> </input> </td>
+  </tr>
+  <tr>
+   <td> Allocated Room No: </td> <td> <input type = 'text' placeholder = 'enter room number' name = "room"> </input> </td>
+  </tr>
+  <tr>
+    <td> MPESA CODE: </td> <td> <input type = 'text' placeholder = 'mpesa code' name = "mpesa"> </input> </td>
+  </tr>
+  <tr>
+    <td> Time In: </td> <td> <input type = 'text' placeholder = 'Time In' name = 'timein'> </input> </td>
+  </tr>
+  <tr>
+    <td> Enter Phone Number: </td> <td> <input type = 'tel' placeholder = 'enter phone number' name = 'mobile'> </input> </td>
+  </tr>
+  <tr>
+  <td> Enter EMAIL: </td> <td> <input type = 'email' placeholder = 'enter email address' name = 'email'> </input> </td>
+</tr>
+ <tr>
+  <td> <input type = 'SUBMIT' value = 'BOOK CLIENT'> </input> </td><td> <input type = 'RESET'> </input> </td>
+</tr>
+</table>
+</div>
+</form>
+</div>
+
+<hr>
+</body>
+</html>
